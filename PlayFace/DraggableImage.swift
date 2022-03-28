@@ -23,11 +23,11 @@ struct DraggableImage: View {
     var dragGesture: some Gesture {
         DragGesture()
             .onChanged { value in
-                self.location = value.location
-                self.isDragging = true
+                location = value.location
+                isDragging = true
             }
             .onEnded { _ in
-                self.isDragging = false
+                isDragging = false
             }
     }
     
@@ -35,7 +35,7 @@ struct DraggableImage: View {
         Image(systemName: imageName)
             .resizable()
             .scaledToFit()
-            .foregroundColor(self.isDragging ? Color.blue : Color.black)
+            .foregroundColor(isDragging ? .blue : .black)
             .frame(width: 100)
             .position(location)
         // Attache a drag gesture

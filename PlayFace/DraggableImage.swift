@@ -11,12 +11,12 @@ struct DraggableImage: View {
     
     @State private var location: CGPoint
     @State private var isDragging = false
-    private let imageName: String
+    private let systemName: String
     
     init(_ systemName: String,
          defaultLocation: CGPoint) {
-        imageName = systemName
-        location = defaultLocation
+        self.systemName = systemName
+        self.location = defaultLocation
     }
     
     /// Drag guesure
@@ -32,7 +32,7 @@ struct DraggableImage: View {
     }
     
     var body: some View {
-        Image(systemName: imageName)
+        Image(systemName: systemName)
             .resizable()
             .scaledToFit()
             .foregroundColor(isDragging ? .blue : .black)

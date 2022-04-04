@@ -19,7 +19,7 @@ struct DraggableImage: View {
         self.location = defaultLocation
     }
     
-    /// Drag guesure
+    /// Drag gesture
     var dragGesture: some Gesture {
         DragGesture()
             .onChanged { value in
